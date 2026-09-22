@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Starling Nationals 2026 results</title>
+    <link type="text/css" rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Starling Nationals 2026</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href = "/">Home</a>
+
+
+
+    </nav>
+    <main>
+        <h2>Full list of competitors</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Sail Number</th>
+                <th>Wooden Boat</th>
+                <th>Place</th>
+                <th>Gold Fleet</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in data_set %}
+            <tr>
+                <td>{{ data[0] }}</td>
+                <td>{{ data[1] }}</td>
+                <td>{{ data[2] }}</td>
+                <td>{{ data[3] }}</td>
+                <td>{{ data[4] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </main>
+
+</body>
+</html>
