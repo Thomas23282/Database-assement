@@ -14,8 +14,8 @@ def create_connection(db_file):
     return None
 
 @app.route('/')
-def hello_world():  # put application's code here
-    query ="SELECT name, sail_number, wooden_boat, place, gold_fleet FROM data_table"
+def render_home():  # put application's code here
+    query = "SELECT name, sail_number, wooden_boat, place, gold_fleet FROM data_table"
     con = create_connection(DATABASE)
     cur = con.cursor()
     cur.execute(query)
@@ -24,6 +24,45 @@ def hello_world():  # put application's code here
     print(data_list)
 
     return render_template("index.html", data_set = data_list)
+
+
+@app.route('/gold_fleet.html')
+def render_gold():
+    query = "SELECT name, sail_number, wooden_boat, place, gold_fleet FROM data_table WHERE gold_fleet = 1"
+    con = create_connection(DATABASE)
+    cur = con.cursor()
+    cur.execute(query)
+    data_list = cur.fetchall()
+    con.close()
+    print(data_list)
+
+    return render_template("gold_fleet.html", data_set = data_list)
+
+
+@app.route('/silver_fleet.html')
+def render_silver():
+    query = "SELECT name, sail_number, wooden_boat, place, gold_fleet FROM data_table WHERE gold_fleet = 0"
+    con = create_connection(DATABASE)
+    cur = con.cursor()
+    cur.execute(query)
+    data_list = cur.fetchall()
+    con.close()
+    print(data_list)
+
+    return render_template("silver_fleet.html", data_set = data_list)
+
+
+@app.route('/wooden_boat.html')
+def render_wood():
+    query = "SELECT name, sail_number, wooden_boat, place, gold_fleet FROM data_table WHERE wooden_boat = 1 "
+    con = create_connection(DATABASE)
+    cur = con.cursor()
+    cur.execute(query)
+    data_list = cur.fetchall()
+    con.close()
+    print(data_list)
+
+    return render_template("wooden_boat.html", data_set = data_list)
 
 
 if __name__ == '__main__':
