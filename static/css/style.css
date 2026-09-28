@@ -5,3 +5,14 @@ header {
     text-align: center;
     font-size: 30px;
 }
+
+table {
+    border: 2px #000000;
+    border: solid;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px #000000;
+    border: solid;
+}
