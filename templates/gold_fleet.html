@@ -15,6 +15,9 @@
                 <a href = "/">Home</a>
             </li>
             <li>
+            <a href = "full_fleet.html">Full Competitor List</a>
+            </li>
+            <li>
             <a href = "gold_fleet.html">Gold Fleet</a>
             </li>
             <li>
@@ -23,7 +26,10 @@
             <li>
             <a href = "wooden_boat.html">Wooden Boats</a>
         </ul>
-
+        <form method = "POST" action = "/search">
+            <input type = "text" name = "search" id = "search">
+            <input type = "submit" value = "search">
+        </form>
 
     </nav>
     <main>
@@ -42,9 +48,9 @@
             <tr>
                 <td>{{ data[0] }}</td>
                 <td>{{ data[1] }}</td>
-                <td>{{ data[2] }}</td>
+                <td>{{ "True" if data[2] == 1 else "False" }}</td>
                 <td>{{ data[3] }}</td>
-                <td>{{ data[4] }}</td>
+                <td>{{ "True" if data[4] == 1 else "False" }}</td>
             </tr>
             {% endfor %}
         </table>

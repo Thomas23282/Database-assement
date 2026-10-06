@@ -4,15 +4,28 @@ header {
     color: white;
     text-align: center;
     font-size: 30px;
+    margin: 0 auto;
 }
 
 table {
     border: 2px #000000;
     border: solid;
     border-collapse: collapse;
+    margin: 0 auto;
+    width: 50%;
 }
 
 th, td {
     border: 1px #000000;
     border: solid;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    border: 1px solid white;
+    padding: 5px;
+    margin: 5px;
 }
