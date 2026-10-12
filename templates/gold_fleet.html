@@ -25,6 +25,9 @@
             </li>
             <li>
             <a href = "wooden_boat.html">Wooden Boats</a>
+            </li>
+            <li>
+            <a href = "fibreglass_boat.html">Fibreglass Boats</a>
         </ul>
         <form method = "POST" action = "/search">
             <input type = "text" name = "search" id = "search">
@@ -40,7 +43,6 @@
                 <th>Sail Number</th>
                 <th>Wooden Boat</th>
                 <th>Place</th>
-                <th>Gold Fleet</th>
             </tr>
         </thead>
         <tbody>
@@ -50,7 +52,7 @@
                 <td>{{ data[1] }}</td>
                 <td>{{ "True" if data[2] == 1 else "False" }}</td>
                 <td>{{ data[3] }}</td>
-                <td>{{ "True" if data[4] == 1 else "False" }}</td>
+
             </tr>
             {% endfor %}
         </table>

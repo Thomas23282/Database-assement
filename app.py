@@ -69,6 +69,18 @@ def render_wood():
 
     return render_template("wooden_boat.html", data_set = data_list)
 
+@app.route('/fibreglass_boat.html')
+def render_glass():
+    query = "SELECT name, sail_number, wooden_boat, place, gold_fleet FROM data_table WHERE wooden_boat = 0 "
+    con = create_connection(DATABASE)
+    cur = con.cursor()
+    cur.execute(query)
+    data_list = cur.fetchall()
+    con.close()
+    print(data_list)
+
+    return render_template("fibreglass_boat.html", data_set = data_list)
+
 
 @app.route('/search', methods = ['GET', 'POST'])
 def render_search():

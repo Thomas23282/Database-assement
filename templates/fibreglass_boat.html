@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Starling Nationals 2026 Results</title>
+    <link type="text/css" rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Starling Nationals 2026</h1>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href = "/">Home</a>
+            </li>
+            <li>
+            <a href = "full_fleet.html">Full Competitor List</a>
+            </li>
+            <li>
+            <a href = "gold_fleet.html">Gold Fleet</a>
+            </li>
+            <li>
+            <a href = "silver_fleet.html">Silver Fleet</a>
+            </li>
+            <li>
+            <a href = "wooden_boat.html">Wooden Boats</a>
+            </li>
+            <li>
+            <a href = "fibreglass_boat.html">Fibreglass Boats</a>
+        </ul>
+        <form method = "POST" action = "/search">
+            <input type = "text" name = "search" id = "search">
+            <input type = "submit" value = "search">
+        </form>
+
+    </nav>
+    <main>
+        <h2>Full list of fibreglass boats</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Sail Number</th>
+                <th>Place</th>
+                <th>Gold Fleet</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in data_set %}
+            <tr>
+                <td>{{ data[0] }}</td>
+                <td>{{ data[1] }}</td>
+                <td>{{ data[3] }}</td>
+                <td>{{ "True" if data[4] == 1 else "False" }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </main>
+
+</body>
+</html>
