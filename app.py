@@ -97,5 +97,19 @@ def render_search():
     return render_template("full_fleet.html", data_set = data_list)
 
 
+@app.route('/card_display.html')
+def render_card():  # put application's code here
+    query = "SELECT name, sail_number, wooden_boat, place, gold_fleet FROM data_table"
+    con = create_connection(DATABASE)
+    cur = con.cursor()
+    cur.execute(query)
+    data_list = cur.fetchall()
+    con.close()
+    print(data_list)
+
+    return render_template("card_display.html", data_set = data_list)
+
+
+
 if __name__ == '__main__':
     app.run()
