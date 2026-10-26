@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Starling Nationals 2026 Results</title>
+    <link type="text/css" rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class = "image_header">
+        <img src = "../static/images/class_logo.png" width = "200"/>
+        <h1 class = "centre_text">Starling Nationals 2026</h1>
+        <img src = "../static/images/class_logo.png" width = "200"/>
+    </div>
+    <div class = "text_header">
+        <ul>
+                <a href = "/">Home</a>
+            <a href = "full_fleet.html">Full Competitor List</a>
+            <a href = "gold_fleet.html">Gold Fleet</a>
+            <a href = "silver_fleet.html">Silver Fleet</a>
+            <a href = "wooden_boat.html">Wooden Boats</a>
+            <a href = "fibreglass_boat.html">Fibreglass Boats</a>
+            <a href = "card_display.html">Information of each competitor</a>
+        </ul>
+        <form method = "POST" action = "/search">
+            <input type = "text" name = "search" id = "search">
+            <input type = "submit" value = "search">
+        </form>
+    </div>
+    <main>
+        <h2>Search Results</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Sail Number</th>
+                <th>Boat Type</th>
+                <th>Place</th>
+                <th>Fleet</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in data_set %}
+            <tr>
+                <td>{{ data[0] }}</td>
+                <td>{{ data[1] }}</td>
+                <td>{{ "Wood" if data[2] == 1 else "Fibreglass" }}</td>
+                <td>{{ data[3] }}</td>
+                <td>{{ "Gold" if data[4] == 1 else "Silver" }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </main>
+
+</body>
+</html>

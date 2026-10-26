@@ -6,38 +6,26 @@
     <link type="text/css" rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Starling Nationals 2026</h1>
-    </header>
-    <nav>
+    <div class = "image_header">
+        <img src = "../static/images/class_logo.png" width = "200"/>
+        <h1 class = "centre_text">Starling Nationals 2026</h1>
+        <img src = "../static/images/class_logo.png" width = "200"/>
+    </div>
+    <div class = "text_header">
         <ul>
-            <li>
                 <a href = "/">Home</a>
-            </li>
-            <li>
             <a href = "full_fleet.html">Full Competitor List</a>
-            </li>
-            <li>
             <a href = "gold_fleet.html">Gold Fleet</a>
-            </li>
-            <li>
             <a href = "silver_fleet.html">Silver Fleet</a>
-            </li>
-            <li>
             <a href = "wooden_boat.html">Wooden Boats</a>
-            </li>
-            <li>
             <a href = "fibreglass_boat.html">Fibreglass Boats</a>
-            </li>
-            <li>
             <a href = "card_display.html">Information of each competitor</a>
         </ul>
         <form method = "POST" action = "/search">
             <input type = "text" name = "search" id = "search">
             <input type = "submit" value = "search">
         </form>
-
-    </nav>
+    </div>
     <main>
         <h2>Information by competitor</h2>
     <div class = "full_data">
@@ -45,9 +33,9 @@
             <div class = "data">
                 <h4>Name: {{ data [0] }}</h4>
                 <p>Sail Number: {{ data [1] }}</p>
-                <p>Wooden Boat: {{ "True" if data[2] == 1 else "False" }}</p>
+                <p>Boat Type: {{ "Wood" if data[2] == 1 else "Fibreglass" }}</p>
                 <p>Place: {{ data [3] }}</p>
-                <p>Gold Fleet: {{ "True" if data[4] == 1 else "False" }}</p>
+                <p>Fleet: {{ "Gold" if data[4] == 1 else "Silver" }}</p>
             </div>
         {% endfor %}
     </div>

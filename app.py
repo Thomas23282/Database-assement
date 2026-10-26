@@ -94,7 +94,7 @@ def render_search():
     con.close()
     print(data_list)
 
-    return render_template("full_fleet.html", data_set = data_list)
+    return render_template("search_page.html", data_set = data_list)
 
 
 @app.route('/card_display.html')
